@@ -1,28 +1,26 @@
 # MSFF-DTA
 
-Description
+## Description
 The MSFF-DTA repository contains the implementation code for the paper "Prediction of Drug-Target Binding Affinity Based on Multi-Scale Feature Fusion". It provides comprehensive scripts for running and training models specifically designed for two datasets: Davis and Kiba.
 
-Getting Started
+## Getting Started
 To initiate the MSFF-DTA project, adhere to the following guidelines:
 
-Prerequisites
+## Prerequisites
 Python: Ensure that Python is installed on your machine.
 Dependencies: Install all necessary dependencies by executing pip install -r requirements.txt within the project's root directory(To do).
-Installing and Running
-Clone the Repository:
 
+## Installing and Running
+### Clone the Repository:
 bash
 git clone https://github.com/yourusername/msff-dta.git
 (Make sure to replace yourusername with your GitHub username.)
 
-Navigate to the Project Directory:
-
+### Navigate to the Project Directory:
 bash
 cd msff-dta
 
-To execute the models on the respective datasets, use the designated commands:
-
+### To execute the models on the respective datasets, use the designated commands:
 Davis Dataset
 Protein Cold Start:
 
