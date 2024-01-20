@@ -42,5 +42,5 @@ Protein and Drug Cold Start:
 
 bash
 python src_v1/main.py --root_data_path data/Kiba/prot_and_drug_cold_start
-Note: For the Kiba dataset, the "Protein Cold Start" option is not provided.
+
 
