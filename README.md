@@ -13,8 +13,8 @@ Dependencies: Install all necessary dependencies by executing pip install -r req
 ## Installing and Running
 ### Clone the Repository:
 bash
-git clone https://github.com/yourusername/msff-dta.git
-(Make sure to replace yourusername with your GitHub username.)
+git clone [https://github.com/whitehat32/MSFF-DTA.git](https://github.com/whitehat32/MSFF-DTA.git)
+
 
 ### Navigate to the Project Directory:
 bash
