@@ -20,10 +20,9 @@ git clone https://github.com/yourusername/msff-dta.git
 bash
 cd msff-dta
 
-### To execute the models on the respective datasets, use the designated commands:
-Davis Dataset
+## To execute the models on the respective datasets, use the designated commands:
+### Davis Dataset
 Protein Cold Start:
-
 bash
 python src_v1/main.py --root_data_path data/Davis/prot_cold_start
 Drug Cold Start:
@@ -34,9 +33,9 @@ Protein and Drug Cold Start:
 
 bash
 python src_v1/main.py --root_data_path data/Davis/prot_and_drug_cold_start
+
 Kiba Dataset
 Drug Cold Start:
-
 bash
 python src_v1/main.py --root_data_path data/Kiba/drug_cold_start
 Protein and Drug Cold Start:
