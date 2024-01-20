@@ -8,7 +8,8 @@ To initiate the MSFF-DTA project, adhere to the following guidelines:
 
 ## Prerequisites
 Python: Ensure that Python is installed on your machine.
-Dependencies: Install all necessary dependencies by executing pip install -r requirements.txt within the project's root directory(To do).
+Dependencies: Install all necessary dependencies by executing 
+pip install -r requirements.txt within the project's root directory(To do).
 
 ## Installing and Running
 ### Clone the Repository:
