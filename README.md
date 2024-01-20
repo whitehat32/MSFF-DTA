@@ -1,4 +1,4 @@
-##MSFF-DTA
+# MSFF-DTA
 
 Description
 The MSFF-DTA repository contains the implementation code for the paper "Prediction of Drug-Target Binding Affinity Based on Multi-Scale Feature Fusion". It provides comprehensive scripts for running and training models specifically designed for two datasets: Davis and Kiba.
