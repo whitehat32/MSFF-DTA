@@ -25,20 +25,20 @@ cd msff-dta
 ### Davis Dataset
 #### Protein Cold Start:
 bash
-python src_v1/main.py --root_data_path data/Davis/prot_cold_start
+python main.py --root_data_path data/Davis/prot_cold_start
 #### Drug Cold Start:
 bash
-python src_v1/main.py --root_data_path data/Davis/drug_cold_start
+python main.py --root_data_path data/Davis/drug_cold_start
 #### Protein and Drug Cold Start:
 bash
-python src_v1/main.py --root_data_path data/Davis/prot_and_drug_cold_start
+python main.py --root_data_path data/Davis/prot_and_drug_cold_start
 
 ### Kiba Dataset
 #### Drug Cold Start:
 bash
-python src_v1/main.py --root_data_path data/Kiba/drug_cold_start
+python main.py --root_data_path data/Kiba/drug_cold_start
 #### Protein and Drug Cold Start:
 bash
-python src_v1/main.py --root_data_path data/Kiba/prot_and_drug_cold_start
+python main.py --root_data_path data/Kiba/prot_and_drug_cold_start
 
 
