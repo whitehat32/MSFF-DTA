@@ -7,9 +7,15 @@ The MSFF-DTA repository contains the implementation code for the paper "Predicti
 To initiate the MSFF-DTA project, adhere to the following guidelines:
 
 ## Prerequisites
-Python: Ensure that Python is installed on your machine.
+Python: 3.8.0
 Dependencies: Install all necessary dependencies by executing 
-pip install -r requirements.txt within the project's root directory(To do).
+```bash  
+conda create pli python=3.8
+```bash  
+conda install --yes --file requirements.txt
+```bash  
+pip install -r requirements.txt 
+
 
 ## Installing and Running
 ### Clone the Repository:
