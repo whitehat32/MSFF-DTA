@@ -19,32 +19,32 @@ pip install -r requirements.txt
 
 ## Installing and Running
 ### Clone the Repository:
-bash
+```bash
 git clone [https://github.com/whitehat32/MSFF-DTA.git](https://github.com/whitehat32/MSFF-DTA.git)
 
 
 ### Navigate to the Project Directory:
-
+```bash
 cd msff-dta
 
 ## To execute the models on the respective datasets, use the designated commands:
 ### Davis Dataset
 #### Protein Cold Start:
 
-python main.py --root_data_path data/Davis/prot_cold_start
+```python main.py --root_data_path data/Davis/prot_cold_start
 #### Drug Cold Start:
 
 python main.py --root_data_path data/Davis/drug_cold_start
 #### Protein and Drug Cold Start:
 
-python main.py --root_data_path data/Davis/prot_and_drug_cold_start
+```python main.py --root_data_path data/Davis/prot_and_drug_cold_start
 
 ### Kiba Dataset
 #### Drug Cold Start:
 
-python main.py --root_data_path data/Kiba/drug_cold_start
+```python main.py --root_data_path data/Kiba/drug_cold_start
 #### Protein and Drug Cold Start:
 
-python main.py --root_data_path data/Kiba/prot_and_drug_cold_start
+```python main.py --root_data_path data/Kiba/prot_and_drug_cold_start
 
 
