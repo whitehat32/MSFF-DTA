@@ -26,7 +26,7 @@ pip install -r requirements.txt
 ### Clone the Repository:
 ```
 bash
-git clone [https://github.com/whitehat32/MSFF-DTA.git](https://github.com/whitehat32/MSFF-DTA.git)
+git clone https://github.com/whitehat32/MSFF-DTA.git
 ```
 
 ### Navigate to the Project Directory:
