@@ -654,6 +654,7 @@ class Predictor(nn.Module):
         # protein_gnn = global_mean_pool(torch.cat(protein_gnn, dim=-1), protein_graph.batch)
 
         # protein_patch, protein_edge_att = self.patch_gnn(protein_input, protein_graph, sub_graph=True, training=type)
+        protein_fg = torch.cat([protein_fg, protein_fg[:,-1,:].unsqueeze(1).clone(),protein_fg[:,-1,:].unsqueeze(1).clone()], dim=1)
         protein_input = protein_fg.permute(0, 2, 1)
         protein_seq_list = [block(protein_input) for block in self.block_list]
 
