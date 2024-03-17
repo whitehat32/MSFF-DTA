@@ -124,7 +124,7 @@ def parse_args():
                         default='regression',
                         help='Objective (classification / regression)')
 
-    parser.add_argument('--seed', type=int, default=2022, help='Random Seed')
+    parser.add_argument('--seed', type=int, default=2021, help='Random Seed')
 
     parser.add_argument('--gpus', type=str, default='1', help='Number of GPUs')
     parser.add_argument('--batch_size', type=int, default=32, help='Batch Size for Train(Validation/Test)')
