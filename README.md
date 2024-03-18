@@ -46,7 +46,7 @@ python main.py --root_data_path data/Davis/drug_cold_start
 ```
 #### Protein and Drug Cold Start:
 ```
-python main.py --root_data_path data/Davis/prot_and_drug_cold_start
+python main.py --root_data_path data/Davis/drug_and_prot_cold_start
 ```
 ### Kiba Dataset
 #### Drug Cold Start:
