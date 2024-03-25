@@ -11,15 +11,19 @@ Python: 3.8.0
 Dependencies: Install all necessary dependencies by executing 
 ```bash  
 conda create pli python=3.8
+conda activate pli
 ```
 ```
 bash  
-conda install --yes --file requirements.txt
+conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.7 -c pytorch -c nvidia
 ```
 
 ```
 bash  
-pip install -r requirements.txt 
+pip install pytorch_lightning==2.1.2
+conda install pyg=*=*cu* -c pyg
+pip install torch_sparse -f https://data.pyg.org/whl/torch-1.13.1+cu117.html
+pip install networkx
 ```
 
 ## Installing and Running
