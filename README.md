@@ -9,12 +9,9 @@ To initiate the MSFF-DTA project, adhere to the following guidelines:
 ## Prerequisites
 Python: 3.8.0
 Dependencies: Install all necessary dependencies by executing 
-```bash  
+``` 
 conda create pli python=3.8
-conda activate pli
-```
-```
-bash  
+conda activate pli 
 conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.7 -c pytorch -c nvidia
 ```
 
