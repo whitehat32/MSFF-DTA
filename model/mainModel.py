@@ -915,7 +915,7 @@ class DPI(nn.Module):
         sub_node_att3 = self.extractor3(sub_node_att3, compound_graph.edge_index)
         
         sub_node_att3 = concrete_sample(sub_node_att3, 1, training=0).squeeze()
-        perm, perm1 = topk(sub_node_att3, 0.7, compound_graph.batch)
+        perm, perm1 = topk(sub_node_att3, 0.5, compound_graph.batch)
         torch.set_printoptions(profile="full")
 
         batch = compound_graph.batch[perm]
