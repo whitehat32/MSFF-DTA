@@ -42,7 +42,7 @@ class ProteinFeatureManager():
         # pretrain_embedding = np.load(os.path.join(data_path, 'pretrain_proteins.npz'), allow_pickle=True)['dict'][()]
         for seq, prot_id in zip(list(map_data['sequences']), list(map_data['prot_id'])):
             self.id_to_sequence[prot_id] = seq
-            # seq = seq[:1200]
+            seq = seq[:1200]
             category_seq = self.protein2category(seq)
             self.get_fg_dict(category_seq)
             self.protein_fg[prot_id] = self.get_fg(category_seq)
