@@ -892,13 +892,38 @@ class DeepCPIModel(pl.LightningModule):
             self.log("val_loss", avg_loss, sync_dist=True)
             self.validation_step_outputs.clear()
 
-    def get_r(self, decay_interval, decay_r, current_epoch, init_r=0.9, final_r=0.5):
-        r = init_r - current_epoch // decay_interval * decay_r
-        # print(r)
-        if r < final_r:
-            r = final_r
-        return r
+    # Prepare for rm2
+    def get_k(self, y_obs, y_pred):
+        y_obs = np.array(y_obs)
+        y_pred = np.array(y_pred)
+        return sum(y_obs * y_pred) / sum(y_pred ** 2)
+    # Prepare for rm2
+    def squared_error_zero(self, y_obs, y_pred):
+        k = self.get_k(y_obs, y_pred)
+        y_obs = np.array(y_obs)
+        y_pred = np.array(y_pred)
+        y_obs_mean = np.mean(y_obs)
+        upp = sum((y_obs - k * y_pred) ** 2)
+        down = sum((y_obs - y_obs_mean) ** 2)
 
+        return 1 - (upp / down)
+    # Prepare for rm2
+    def r_squared_error(self, y_obs, y_pred):
+        y_obs = np.array(y_obs)
+        y_pred = np.array(y_pred)
+        y_obs_mean = np.mean(y_obs)
+        y_pred_mean = np.mean(y_pred)
+        mult = sum((y_obs - y_obs_mean) * (y_pred - y_pred_mean)) ** 2
+        y_obs_sq = sum((y_obs - y_obs_mean) ** 2)
+        y_pred_sq = sum((y_pred - y_pred_mean) ** 2)
+        return mult / (y_obs_sq * y_pred_sq)
+
+
+    def get_rm2(self, Y, P):
+        r2 = self.r_squared_error(Y, P)
+        r02 = self.squared_error_zero(Y, P)
+
+        return r2 * (1 - np.sqrt(np.absolute(r2 ** 2 - r02 ** 2)))
     def test_step(self, batch, batch_idx):
         # print('1111')
         interactions = batch["LABEL"]
@@ -1012,7 +1037,7 @@ class DeepCPIModel(pl.LightningModule):
             print(len(predict_values))
             mse = mean_squared_error(correct_values, predict_values)
             rmse = np.sqrt(mean_squared_error(correct_values, predict_values))
-            r2 = r2_score(correct_values, predict_values)
+            r2 = self.get_rm2(correct_values, predict_values)
             pr = pearson(predict_values, correct_values)
             sr = spearman(predict_values, correct_values)
 
