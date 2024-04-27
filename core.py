@@ -1049,7 +1049,7 @@ class DeepCPIModel(pl.LightningModule):
                 "test_loss": avg_loss.item(),
                 "mse": mse,
                 "rmse": rmse,
-                "r2_score": r2,
+                "rm2_score": r2,
                 "pearson": pr,
                 "spearman": sr,
                 'ci': ci(correct_values, predict_values)
