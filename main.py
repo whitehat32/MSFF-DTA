@@ -68,41 +68,41 @@ def run(args: argparse.Namespace):
             devices=args.gpus
         )
         # if args.valid_test:
-        #     valid_result = trainer.test(model, ckpt_path=args.ckpt_path)
+            # valid_result = trainer.test(model, ckpt_path=args.ckpt_path)
 
-        # trainer.test(model, ckpt_path=args.ckpt_path)
-        dct = dict()
-        def mpredict(mode):
-            predictions = trainer.predict(model,  ckpt_path=args.ckpt_path)
-            prediction_scores = []
-            for p in predictions:
-                print(p.shape)
-                predictions = p.numpy()
-                # import pdb; pdb.set_trace()
-                prediction_scores.append(predictions)
-            # print(predictions.shape)
-            import numpy as np
-            dct['prediction'] = np.concatenate(prediction_scores, axis=0)
-            # _, indeices = torch.topk(predictions, k=30, dim=0, largest=True)
-            # print(predictions[indeices])
-            # print(indeices)
-            # dct['indeices'] = indeices + 1
+        trainer.test(model, ckpt_path=args.ckpt_path)
+        # dct = dict()
+        # def mpredict(mode):
+        #     predictions = trainer.predict(model,  ckpt_path=args.ckpt_path)
+        #     prediction_scores = []
+        #     for p in predictions:
+        #         print(p.shape)
+        #         predictions = p.numpy()
+        #         # import pdb; pdb.set_trace()
+        #         prediction_scores.append(predictions)
+        #     # print(predictions.shape)
+        #     import numpy as np
+        #     dct['prediction'] = np.concatenate(prediction_scores, axis=0)
+        #     # _, indeices = torch.topk(predictions, k=30, dim=0, largest=True)
+        #     # print(predictions[indeices])
+        #     # print(indeices)
+        #     # dct['indeices'] = indeices + 1
             
-            smile_name = pd.read_csv('case_study_true.csv')
-            dct['COMPOUND_SMILES'] = smile_name['COMPOUND_SMILES']
+        #     smile_name = pd.read_csv('case_study_true.csv')
+        #     dct['COMPOUND_SMILES'] = smile_name['COMPOUND_SMILES']
 
-            print(len(dct)) 
-            ans = pd.DataFrame(dct)
-            ans.to_csv('indeices.csv', index=None)
-            # predictions, _ = torch.topk(predictions, k=1, dim=0, largest=True)
-            # print(predictions)
-        import os
+        #     print(len(dct)) 
+        #     ans = pd.DataFrame(dct)
+        #     ans.to_csv('indeices.csv', index=None)
+        #     # predictions, _ = torch.topk(predictions, k=1, dim=0, largest=True)
+        #     # print(predictions)
+        # import os
 
-        # 获取当前工作目录
-        current_path = os.getcwd()
+        # # 获取当前工作目录
+        # current_path = os.getcwd()
 
-        print("当前工作目录是:", current_path)
-        mpredict(model)
+        # print("当前工作目录是:", current_path)
+        # mpredict(model)
         
 
 
